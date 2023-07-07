@@ -32,6 +32,7 @@ public class EjerciciosExtra3 {
         RaicesServicio rs = new RaicesServicio();
         rs.crearRaices();
         rs.calcular();
+        
 
     }
 
