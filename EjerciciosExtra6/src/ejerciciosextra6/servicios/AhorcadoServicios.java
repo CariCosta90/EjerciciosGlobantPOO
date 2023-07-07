@@ -17,6 +17,7 @@ máximas, el valor que ingresó el usuario y encontradas en 0.
     Ahorcado a1 = new Ahorcado();
     String[] palabraArray = a1.getPalabra();
     int encontradas = a1.getEncontradas();
+    //este segundo array es para ir mostrando la palabra encontrada y la posicion de las letras
     String[] letrasEncontradas;
 
     public Ahorcado crearJuego() {
@@ -89,15 +90,6 @@ busque una letra que no esté, se le restará uno a sus oportunidades.
         System.out.println("Hasta ahora se van encontrando: " + a1.getEncontradas() + " letras");
         System.out.println("Aun falta encontar " + (a1.getPalabra().length - a1.getEncontradas()) + " letras");
 
-        /*
-        for (String palabra : a1.getPalabra()) {
-            if (letra.equalsIgnoreCase(palabra)) {
-                encontrada = true;
-                letrasEncontradas = a1.getPalabra();
-            }
-        }*/
-        
-
         for (int i = 0; i < a1.getPalabra().length; i++) {
             if (letra.equalsIgnoreCase(a1.getPalabra()[i])) {
                 encontrada = true;
@@ -105,7 +97,7 @@ busque una letra que no esté, se le restará uno a sus oportunidades.
             }
         }
 
-        //mostramos el array de la palabra encontrada
+        //mostramos el array de la palabra encontrada hasta ahora completamos los espacios en blanco con "_"
         System.out.println("La palabra hasta ahora: ");
         for (String letrasEncontrada : letrasEncontradas) {
             if (letrasEncontrada != null) {
@@ -124,7 +116,7 @@ busque una letra que no esté, se le restará uno a sus oportunidades.
     public void intentos(boolean encontrada) {
         int vidas = a1.getVidas();
         if (!encontrada) {
-            
+
             System.out.println("Esa letra no se encuentra an la palabra! Haz perdido una vida...");
             vidas -= 1;
         }
@@ -144,7 +136,7 @@ se quede sin intentos. Este método se llamará en el main.
         buscarLetra();
 
         if (a1.getEncontradas() == a1.getPalabra().length) {
-            System.out.println("Has encontrado la palabra");
+            System.out.println("Has encontrado la palabra!");
         }
         if (a1.getVidas() == 0) {
             System.out.println("Te haz quedado sin vidas!");
@@ -152,9 +144,4 @@ se quede sin intentos. Este método se llamará en el main.
 
     }
 
-    //me gustaria agregar: 
-    //mostrar palabra --> crear un segundo vector donde se vayan guardando las letras que se van ingresando 
-    //comparar el vector palabra con el vector de letras encontradas 
-    //si estan en las 2 mostrar sino poner * o _ 
-    //necesitamos un 3er vector donde ir guardando?? 
 }
