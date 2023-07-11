@@ -2,21 +2,22 @@
 package actividadextra2.entidades;
 
 import java.util.Date;
+import java.time.LocalDate;
 
 public class Alquiler {
     
     //atributos 
     private String pelicula;
-    private Date inicio;
-    private Date fin;
-    private float precio;
+    private LocalDate inicio;
+    private LocalDate fin;
+    private double precio;
     
     //constructores
 
     public Alquiler() {
     }
 
-    public Alquiler(String pelicula, Date inicio, Date fin, float precio) {
+    public Alquiler(String pelicula, LocalDate inicio, LocalDate fin, double precio) {
         this.pelicula = pelicula;
         this.inicio = inicio;
         this.fin = fin;
@@ -33,28 +34,35 @@ public class Alquiler {
         this.pelicula = pelicula;
     }
 
-    public Date getInicio() {
+    public LocalDate getInicio() {
         return inicio;
     }
 
-    public void setInicio(Date inicio) {
+    public void setInicio(LocalDate inicio) {
         this.inicio = inicio;
     }
 
-    public Date getFin() {
+    public LocalDate getFin() {
         return fin;
     }
 
-    public void setFin(Date fin) {
+    public void setFin(LocalDate fin) {
         this.fin = fin;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
+
+    @Override
+    public String toString() {
+        return "Alquiler{" + "pelicula=" + pelicula + ", inicioAlquiler=" + inicio + ", finAlquiler=" + fin + ", precio de alquiler de esta pelicula= $" + precio + '}';
+    }
+    
+    
 
 }
